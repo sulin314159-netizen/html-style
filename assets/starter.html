@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>页面标题</title>
+<style>
+  /* ===== 风格 tokens：整段替换为 references/styles/<name>.md 的变量 ===== */
+  :root{
+    --paper:#fbfaf6;
+    --card:#ffffff;
+    --ink:#16201e;
+    --muted:#5d6865;
+    --line:#e5e7df;
+    --green:#008c68;
+    --green-dark:#05664f;
+    --mint:#dff4eb;
+    --radius:20px;
+    --max:1160px;
+    --shadow:0 20px 55px -35px rgba(9,50,42,.42);
+    --font:"Inter","Segoe UI",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:"JetBrains Mono",Consolas,monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--green);text-underline-offset:4px}
+  a:hover{color:var(--green-dark)}
+  :focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 5vw}
+
+  header{border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+  .nav ul{display:flex;gap:28px;list-style:none}
+  .nav ul a{color:var(--muted);text-decoration:none;font-size:15px}
+  .nav ul a:hover{color:var(--ink)}
+
+  .hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(40px,6vw,72px);line-height:1.05;letter-spacing:0;margin:18px 0 20px;font-weight:700}
+  .lede{font-size:19px;line-height:1.75;color:var(--muted);max-width:62ch}
+
+  section{padding:88px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(26px,3.2vw,38px);line-height:1.2;letter-spacing:-.02em;margin-bottom:14px;font-weight:650}
+  .sub{color:var(--muted);max-width:60ch;margin-bottom:40px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow)}
+  .card h3{font-size:19px;margin-bottom:8px;letter-spacing:-.01em}
+  .card p{font-size:15px;line-height:1.7;color:var(--muted)}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:background .16s ease-out,transform .16s ease-out}
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+  footer{padding:56px 0;color:var(--muted);font-size:14px}
+  @media (max-width:640px){.kicker,.sub,footer,nav a{font-size:14px}}
+
+  @media (max-width:720px){
+    .hero{padding:64px 0 48px}
+    section{padding:64px 0}
+    .nav ul{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">品牌</a>
+    <ul>
+      <li><a href="#features">特性</a></li>
+      <li><a href="#how">怎么用</a></li>
+      <li><a href="#faq">问题</a></li>
+    </ul>
+    <a class="btn" href="#">开始</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="kicker">Eyebrow / 一句话定位</p>
+    <h1>主标题讲结论，<br>不讲主题名。</h1>
+    <p class="lede">一段两行的副标，说明你解决什么问题、给谁解决。不要写“赋能”“闭环”。</p>
+  </div>
+
+  <section id="features">
+    <h2>三个支撑点</h2>
+    <p class="sub">每个卡片一句话，信息要有差，不要三张同构卡。</p>
+    <div class="grid">
+      <div class="card"><h3>第一点</h3><p>具体、可验证，最好带一个数字（示意要标注）。</p></div>
+      <div class="card"><h3>第二点</h3><p>说清楚和第一点的区别，不要换词重复。</p></div>
+      <div class="card"><h3>第三点</h3><p>给出下一步，让人知道该做什么。</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>怎么用</h2>
+    <p class="sub">三步以内；超过三步就考虑折叠。</p>
+    <div class="grid">
+      <div class="card"><h3>01 / 第一步</h3><p>一句话说明动作。</p></div>
+      <div class="card"><h3>02 / 第二步</h3><p>一句话说明动作。</p></div>
+      <div class="card"><h3>03 / 第三步</h3><p>一句话说明动作。</p></div>
+    </div>
+  </section>
+
+  <footer>© 2026 · 品牌名</footer>
+</div>
+
+</body>
+</html>

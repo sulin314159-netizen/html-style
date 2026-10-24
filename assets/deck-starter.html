@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck 标题</title>
+<style>
+  /* ===== 纸墨编辑 · frontend-slides 的 tokens ===== */
+  :root{
+    --paper:#faf9f7;
+    --ink:#1a1a1a;
+    --muted:#6b645c;
+    --accent:#c41e3a;
+    --line:#ddd8cf;
+    --serif:'Cormorant Garamond','Noto Serif SC','Songti SC',Georgia,serif;
+    --serif-body:'Source Serif 4','Noto Serif SC',Georgia,serif;
+    --sans:'Inter','Segoe UI',system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:var(--line);overflow:hidden}
+  #stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform:translate(-50%,-50%) scale(1);transform-origin:center}
+  .slide{position:absolute;inset:0;background:var(--paper);color:var(--ink);padding:56px 72px;display:none;flex-direction:column;font-family:var(--serif-body);overflow-y:auto;overscroll-behavior:contain}
+  .slide.active{display:flex}
+
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:var(--serif);font-weight:400;font-size:104px;line-height:1.04;letter-spacing:0;margin:22px 0 14px}
+  h1 em{font-style:italic;color:var(--accent)}
+  h2{font-family:var(--serif);font-weight:400;font-size:60px;line-height:1.08;letter-spacing:0}
+  .lead{font-size:20px;line-height:1.8;color:var(--muted);max-width:38em}
+  .rule{height:1px;background:var(--line);width:100%}
+
+  .center{justify-content:center}
+  .spacer{flex:1}
+
+  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .pager{display:flex;align-items:center;gap:10px}
+  .pager button{font-family:var(--sans);font-size:12px;letter-spacing:.1em;color:var(--muted);background:none;border:1px solid var(--line);padding:4px 9px;cursor:pointer}
+  .pager button:hover{color:var(--ink);border-color:var(--muted)}
+  .pager button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:36px;border-top:1px solid var(--line);padding-top:28px}
+  .n{font-family:var(--sans);font-variant-numeric:lining-nums tabular-nums;font-size:64px;line-height:1;letter-spacing:-.03em;color:var(--ink)}
+  .n b{color:var(--accent);font-weight:500}
+  .l{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+  .rows{display:flex;flex-direction:column;margin-top:28px}
+  .row{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+  .row .idx{font-family:var(--sans);font-variant-numeric:lining-nums tabular-nums;font-size:30px;color:var(--accent);line-height:1}
+  .row h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.2;margin-bottom:6px}
+  .row p{font-size:16px;line-height:1.7;color:var(--muted)}
+
+  .notes{display:none}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <section class="slide active">
+    <div class="eyebrow">Deck 标题 / 场合 · 2026</div>
+    <h1>大标题写结论，<br>副标写<em>为什么</em>。</h1>
+    <p class="lead">一句引子，说明这场分享要解决什么问题。不要写“背景介绍”。</p>
+    <div class="foot">
+      <span>2026 · 场合</span>
+      <span class="pager"><button type="button" data-go="prev" aria-label="上一页">‹</button><span class="pg">01 / 05</span><button type="button" data-go="next" aria-label="下一页">›</button></span>
+    </div>
+    <aside class="notes">开场停两秒，先让他们看标题。</aside>
+  </section>
+
+  <section class="slide center">
+    <div class="eyebrow">Thesis</div>
+    <h2 style="margin-top:18px">结论放在标题里，<br>不要放“背景介绍”。</h2>
+    <div class="rule" style="margin:28px 0"></div>
+    <p class="lead">一句支撑，解释这个结论为什么成立。</p>
+    <div class="foot">
+      <span>2026 · 场合</span>
+      <span class="pager"><button type="button" data-go="prev" aria-label="上一页">‹</button><span class="pg">02 / 05</span><button type="button" data-go="next" aria-label="下一页">›</button></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Numbers · 示意</div>
+    <h2 style="margin-top:14px">同样的事，更短的路。</h2>
+    <div class="cols">
+      <div><div class="n">12 <b>→ 1</b></div><div class="l">团队规模 · 人</div></div>
+      <div><div class="n">5 <b>→ 1</b></div><div class="l">决策链 · 层</div></div>
+      <div><div class="n">90 <b>→ 3</b></div><div class="l">试错周期 · 天</div></div>
+    </div>
+    <p class="lead" style="margin-top:24px;font-size:12px">示意数据，不是实测。</p>
+    <div class="foot">
+      <span>2026 · 场合</span>
+      <span class="pager"><button type="button" data-go="prev" aria-label="上一页">‹</button><span class="pg">03 / 05</span><button type="button" data-go="next" aria-label="下一页">›</button></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Method</div>
+    <h2 style="margin-top:14px">把过程压成三步。</h2>
+    <div class="rows">
+      <div class="row"><div class="idx">01</div><div><h3>第一步</h3><p>一句话说明这一步做什么、产出什么。</p></div></div>
+      <div class="row"><div class="idx">02</div><div><h3>第二步</h3><p>一句话说明这一步做什么、产出什么。</p></div></div>
+      <div class="row"><div class="idx">03</div><div><h3>第三步</h3><p>一句话说明这一步做什么、产出什么。</p></div></div>
+    </div>
+    <div class="foot">
+      <span>2026 · 场合</span>
+      <span class="pager"><button type="button" data-go="prev" aria-label="上一页">‹</button><span class="pg">04 / 05</span><button type="button" data-go="next" aria-label="下一页">›</button></span>
+    </div>
+  </section>
+
+  <section class="slide center">
+    <div class="eyebrow">Closing</div>
+    <h1 style="font-size:84px">一句话<em>收尾</em>。</h1>
+    <div class="rule" style="max-width:120px;margin:20px 0 18px"></div>
+    <p class="lead">署名或联系方式。</p>
+    <div class="foot">
+      <span>2026 · 场合</span>
+      <span class="pager"><button type="button" data-go="prev" aria-label="上一页">‹</button><span class="pg">05 / 05</span><button type="button" data-go="next" aria-label="下一页">›</button></span>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  const total = slides.length;
+  let i = 0;
+
+  function go(n){
+    i = (n + total) % total;
+    slides.forEach((s,k)=>s.classList.toggle('active', k===i));
+    slides[i].querySelectorAll('.pg').forEach(el=>{
+      el.textContent = String(i+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+    });
+    try{ history.replaceState(null, '', '#/' + (i+1)); }catch(e){}
+  }
+  document.querySelectorAll('[data-go]').forEach(btn=>{
+    btn.addEventListener('click', ()=> go(i + (btn.dataset.go === 'next' ? 1 : -1)));
+  });
+  addEventListener('keydown', e=>{
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '||e.key==='PageDown'){ e.preventDefault(); go(i+1); }
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); go(i-1); }
+    if(e.key==='Home'){ e.preventDefault(); go(0); }
+    if(e.key==='End'){ e.preventDefault(); go(total-1); }
+  });
+
+  // 滚轮：内容放得下就翻页；内容溢出时先滚内容，滚到边缘再翻页。
+  let wheelLock = 0;
+  addEventListener('wheel', e=>{
+    const s = slides[i];
+    const canScroll = s.scrollHeight > s.clientHeight + 2;
+    const atTop = s.scrollTop <= 0;
+    const atBottom = s.scrollTop + s.clientHeight >= s.scrollHeight - 2;
+    if(canScroll && ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop))) return;
+    e.preventDefault();
+    const now = Date.now();
+    if(now - wheelLock < 420) return;
+    wheelLock = now;
+    go(i + (e.deltaY > 0 ? 1 : -1));
+  }, { passive: false });
+  function fit(){
+    const s = Math.min(innerWidth/1280, innerHeight/720);
+    document.getElementById('stage').style.transform = 'translate(-50%,-50%) scale(' + s + ')';
+  }
+  addEventListener('resize', fit); fit();
+
+  const qs = new URLSearchParams(location.search).get('slide');
+  const hs = (location.hash.match(/#\/(\d+)/) || [])[1];
+  const raw = parseInt(qs || hs || '1', 10);
+  go(Number.isFinite(raw) ? Math.min(Math.max(raw, 1), total) - 1 : 0);
+</script>
+</body>
+</html>
