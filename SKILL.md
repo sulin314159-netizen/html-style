@@ -1,6 +1,6 @@
 ---
 name: html-style
-description: 用 10 套校准过的视觉风格生成或改造 HTML 页面与 16:9 演讲 deck。当用户要做落地页、文章页、作品集、一屏信息页、后台界面，或说“把 HTML 做好看 / 美化 / 改版 / 换个风格 / 太丑了”，或要做 PPT、幻灯片、演讲 deck、路演材料时使用。即使用户没点名风格，只要涉及 HTML 的视觉质量，也应当先看这个 skill。风格名包括：纸感极简、活力编辑、技术蓝、黑白剧场、渐变梦幻、暖纸书卷、纸墨编辑、柔和渐变、自由画布、书院暖光。 English triggers: make this page beautiful, design a landing page, restyle this HTML, build a presentation deck, create slides.
+description: 用 10 套校准过的视觉风格生成或改造 HTML 页面与 16:9 演讲 deck。当用户要做落地页、文章页、作品集、一屏信息页、后台界面，或说“把 HTML 做好看 / 美化 / 改版 / 换个风格 / 太丑了”，或要做 PPT、幻灯片、演讲 deck、路演材料时使用。即使用户没点名风格，只要涉及 HTML 的视觉质量，也应当先看这个 skill。风格名包括：纸感极简、活力编辑、技术蓝、黑白剧场、渐变梦幻、暖纸书卷、纸墨编辑、柔和渐变、自由画布、书院暖光。 English triggers include make this page beautiful, design a landing page, restyle this HTML, build a presentation deck, create slides.
 ---
 
 # HTML 风格系统
